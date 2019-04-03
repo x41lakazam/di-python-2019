@@ -1,3 +1,14 @@
+class Message:
+    def __init__(self, content, sender, date):
+        self.content = content
+        self.sender  = sender
+        self.date    = date
+
+    def __repr__(self):
+        return "{} (from {} at {})".format(self.content,
+                                         self.sender,
+                                         self.date)
+
 class Phone:
 
     def __init__(self, brand, model, phone_number, tactile_screen=False):
@@ -12,6 +23,8 @@ class Phone:
     def txt_message(self, number, message):
         print("Sending to {}: {}".format(number, message))
 
+    def __repr__(self):
+        return self.phone_number
 
 class Smartphone(Phone):  # Specify that Smartphone inherit from Phone
 
@@ -21,12 +34,21 @@ class Smartphone(Phone):  # Specify that Smartphone inherit from Phone
 
     def take_pic(self):
         print("Say cheese! *Click*")
-        print("You took a picture with {} camers".format(self.nb_of_cameras))
+        print("You took a picture with {} cameras".format(self.nb_of_cameras))
 
 
 class Iphone(Smartphone):
 
+    nb_of_iphones = 0
+    number_to_obj    = {}
+
     def __init__(self, model, phone_number, nb_of_cameras, face_recognition=False):
+
+        Iphone.nb_of_iphones += 1
+        self.id = Iphone.nb_of_iphones
+
+        Iphone.number_to_obj[phone_number] = self
+
         super().__init__(brand="apple",
                          model=model,
                          phone_number=phone_number,
@@ -34,6 +56,22 @@ class Iphone(Smartphone):
 
         self.face_recognition = face_recognition
         self.password = None
+        self.msg_box  = []
+
+    def query_number(self, phone_number):
+        if phone_number not in Iphone.number_to_obj:
+            print("Incorrect number")
+            return False
+        return Iphone.number_to_obj[phone_number]
+
+    def send_message(self, content, date, dst_number):
+        receiver_phone = self.query_number(dst_number)
+        msg = Message(content=content, date=date, sender=self)
+
+        receiver_phone.receive_message(msg)
+
+    def receive_message(self, msg):
+        self.msg_box.append(msg)
 
     def unlock(self):
         if not self.password:  # NO PASSWORD
@@ -73,6 +111,11 @@ class Iphone(Smartphone):
         return False
 
 
-iphone = Iphone(model="X", phone_number="0586784987", nb_of_cameras=4)
-iphone.change_password()
-iphone.unlock()
+reuven_iphone = Iphone(model="7", phone_number="0527313370", nb_of_cameras=4)
+eyal_iphone   = Iphone(model="Android", phone_number="0586878399", nb_of_cameras=2)
+
+reuven_iphone.send_message("Hello, I love your classes", "03/04/2019", "0586878399")
+print(str(eyal_iphone.msg_box))
+print(str(reuven_iphone))
+
+reuven_iphone.send_message("Hello", 0xf444837deff)
