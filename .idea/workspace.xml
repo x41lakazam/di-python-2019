@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e7b2077-ec5d-49c9-9ce9-526420df0f07" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Python 2.iml" afterPath="$PROJECT_DIR$/.idea/Python 2.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Class/class9/foreign_keys.py" afterPath="$PROJECT_DIR$/Class/class9/foreign_keys.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +13,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="foreign_keys.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="foreign_keys.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Class/class9/foreign_keys.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1865">
-              <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+            <state relative-caret-position="2220">
+              <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spreadsheet_helper.py" pinned="false" current-in-tab="true">
+        <entry file="file://C:/4577/Python/Creations/DIAutoFill/spreadsheet_helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,6 +52,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>RANGE</find>
+      <find>courses_ranges</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -57,6 +70,7 @@
         <option value="$PROJECT_DIR$/Homeworks/myfile.ipynb" />
         <option value="$PROJECT_DIR$/Class/class9/sss.py" />
         <option value="$PROJECT_DIR$/Class/class9/foreign_keys.py" />
+        <option value="C:/4577/Python/Creations/DIAutoFill/spreadsheet_helper.py" />
       </list>
     </option>
   </component>
@@ -80,7 +94,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Course" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -104,6 +117,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Course" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -123,7 +137,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.foreign_keys">
+  <component name="RunManager" selected="Python.spreadsheet_helper">
     <configuration name="foreign_keys" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -160,14 +174,34 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="2">
+    <configuration name="spreadsheet_helper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="C:/4577/Python/Creations/DIAutoFill" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Python 2" />
+      <option name="SCRIPT_NAME" value="C:/4577/Python/Creations/DIAutoFill/spreadsheet_helper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.helloworld" />
       <item index="1" class="java.lang.String" itemvalue="Python.foreign_keys" />
+      <item index="2" class="java.lang.String" itemvalue="Python.spreadsheet_helper" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.foreign_keys" />
-        <item index="1" class="java.lang.String" itemvalue="Python.helloworld" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.spreadsheet_helper" />
+        <item index="1" class="java.lang.String" itemvalue="Python.foreign_keys" />
+        <item index="2" class="java.lang.String" itemvalue="Python.helloworld" />
       </list>
     </recent_temporary>
   </component>
@@ -189,12 +223,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12447917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19005525" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28176796" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -218,45 +251,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/class1/helloworld.py" />
-    <entry file="file://$PROJECT_DIR$/class1/helloworld.py" />
-    <entry file="file://$PROJECT_DIR$/Homeworks/Homework4 (with solutions).ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Homeworks/notebook.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Homeworks/mynotebook">
+    <entry file="file://$PROJECT_DIR$/Class/class9/foreign_keys.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="129" column="1" lean-forward="false" selection-start-line="129" selection-start-column="1" selection-end-line="129" selection-end-column="1" />
+        <state relative-caret-position="2220">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Homeworks/myfile.ipynb">
+    <entry file="file://C:/4577/Python/Creations/DIAutoFill/spreadsheet_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Class/class4/Dictionnaries.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Homeworks/homework 10 (with solutions).ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Class/class9/sss.py">
+    <entry file="file://$PROJECT_DIR$/Class/class9/foreign_keys.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -271,10 +289,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/class1/helloworld.py" />
+    <entry file="file://$PROJECT_DIR$/class1/helloworld.py" />
+    <entry file="file://$PROJECT_DIR$/Homeworks/Homework4 (with solutions).ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Homeworks/notebook.ipynb" />
+    <entry file="file://$PROJECT_DIR$/Homeworks/mynotebook" />
+    <entry file="file://$PROJECT_DIR$/Homeworks/myfile.ipynb" />
+    <entry file="file://$PROJECT_DIR$/Homeworks/homework 10 (with solutions).ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Class/class9/sss.py" />
+    <entry file="file://$PROJECT_DIR$/Class/class4/Dictionnaries.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Class/class9/foreign_keys.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1865">
-          <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+        <state relative-caret-position="2220">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/4577/Python/Creations/DIAutoFill/spreadsheet_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding />
         </state>
       </provider>
