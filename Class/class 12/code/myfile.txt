@@ -1,0 +1,7 @@
+hello from readfile
+hello from read
+hello from file
+hello from readfile
+hello from read
+hello from file
+HELLO FROM EYAL
