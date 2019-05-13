@@ -1,0 +1,119 @@
+###########################################################################################################################################
+######################################################### Resume per subject ##############################################################
+###########################################################################################################################################
+
+
+- Loops 
+    > while loop
+    > break & continue keywords
+    > iterating over a number
+    > for loops
+    > range
+    
+- Strings
+    > len, index, slice
+    > lower, upper, title, capitalize
+    > format
+    > print, copy, replace
+    > strip, startswith/endswith
+    
+- Lists
+    > Definition
+    > Indexes & Slices
+    > Access & Modify an element
+    > Concatenate & Copy
+    > Sort & Sum
+    
+- Dicts
+    > Definition
+    > Add a new value
+    > Access value
+    > keys(), values() & items()
+    
+- Functions
+    > Definition
+    > Arguments
+    > Default arguments
+    > return
+    
+- Exceptions
+    > Try, except, else, finally
+    
+- Assertions
+    > assert & raise
+    
+- Classes
+    > Definition & __init__
+    > Methods & attributes
+    > Objects & self
+    > Classes inheritance
+    > Foreign keys
+
+###########################################################################################################################################
+########################################################## Resume per class ###############################################################
+###########################################################################################################################################
+
+- Class 1:
+    > While loops
+    > input
+    > break
+
+- Class 2:
+    > Strings functions (lower, upper, title, capitalize)
+    > format
+    > len
+    > indexing a string
+    > print, copy, replace
+    > Slice
+    > More advanced functions (strip, startswith, endswith)
+
+- Class 3
+    > List definition
+    > Accessing an element
+    > len
+    > Looping over a list with while loop and index
+    > Slicing a list
+    > Modify an element
+    > Add and delete elements
+    > Concatenating two lists
+    > Sort
+    > Copy
+    > Sum a list
+    
+- class 4
+    > Dict definition
+    > Accessing a value
+    > Adding a new entry
+    > keys(), values(), items()
+    
+- class 5
+    > For loops
+    > range
+    > Functions definition
+    > Functions call
+    > Functions parameters
+    > Default parameters
+    > return
+    
+- class 6
+    > Computational thinking
+    > Exceptions - Try/Except/Else/Finally
+    
+- class 7
+    > Classes
+    > __init__
+    > Class methods and attributes
+    > Modularity
+
+- class 8
+    > Class inheritance
+    > super()
+   
+- class 9 & 10
+    > Foreign keys
+    
+- class 11
+    > Assertion
+    
+- class 12
+    > Hangman
