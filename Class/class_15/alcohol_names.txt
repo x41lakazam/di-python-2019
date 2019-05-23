@@ -1,0 +1,8 @@
+vodka
+rhum
+whisky
+manzana
+tequila
+jin
+beer
+wine
