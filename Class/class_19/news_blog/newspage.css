@@ -1,0 +1,37 @@
+/*
+ * newspage.css
+ * Copyright (C) 2019 pi
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+html{
+    background-image: url("https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    height: 100%;
+    background-size: cover;
+}
+
+body{
+    height: 100%;
+}
+
+#container{
+    padding: 5px;
+    padding-bottom: 50px;
+    background-color: white;
+    width: 40%;
+    text-align: center;
+    margin-left: 30%;
+    margin-right:30% ;
+}
+
+.newslist{
+    lisT-style: none;
+}
+
+.newslist li{
+
+    text-align: left;
+    line-height: 2.2;
+
+}
