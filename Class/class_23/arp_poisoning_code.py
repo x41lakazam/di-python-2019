@@ -69,7 +69,6 @@ def main():
         send_arp_poison(router_ip, target_ip=ip, target_mac=mac)
         time.sleep(.3)
 build_ip2mac()
-main()
 
 
 
