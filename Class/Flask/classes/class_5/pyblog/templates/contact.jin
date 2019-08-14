@@ -1,0 +1,7 @@
+{% extends "base.jin" %}
+
+{% block main %}
+<h1> Contact </h1>
+<p> Contacte moi ce soir je suis chaud comme un lapin chaud chaud</p>
+
+{% endblock %}
