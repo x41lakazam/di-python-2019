@@ -10,9 +10,17 @@
         <a href="{{ url_for('homepage') }}">Homepage</a>
         <a href="{{ url_for('contact') }}">Contact</a>
         <a href="{{ url_for('users_list') }}">Users</a>
+        <a href="{{ url_for('signup') }}">Sign Up</a>
     </div>
-    
-    <div class="main-container">    
+
+    <div class="main-container">
+
+        <div class="flashed_msg">
+            {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+
         {% block main %}
         {% endblock %}
     </div>
