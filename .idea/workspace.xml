@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e7b2077-ec5d-49c9-9ce9-526420df0f07" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Class/Flask/classes/class_7/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Class/Flask/classes/class_7/pyblog/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Class/Flask/classes/class_7/pyblog/fake_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Class/Flask/classes/class_7/pyblog/news_filler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Class/Flask/classes/class_7/pyblog/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Class/Flask/classes/class_7/pyblog/static/css/master.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Class/Flask/classes/class_7/pyblog/templates/base.jin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Class/Flask/classes/class_7/pyblog/templates/contact.jin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Class/Flask/classes/class_7/pyblog/templates/home.jin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Class/Flask/classes/class_7/pyblog/templates/user_profile.jin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Class/Flask/classes/class_7/pyblog/templates/users_list.jin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +15,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.test">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
+            <state relative-caret-position="20">
               <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
             </state>
           </provider>
@@ -76,10 +65,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1926" />
-    <option name="y" value="8" />
-    <option name="width" value="1784" />
-    <option name="height" value="859" />
+    <option name="x" value="1911" />
+    <option name="y" value="-9" />
+    <option name="width" value="1787" />
+    <option name="height" value="960" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -271,6 +260,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="-7" width="1429" height="768" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19081779" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -305,7 +295,7 @@
     <entry file="file://$PROJECT_DIR$/newfile" />
     <entry file="file://$PROJECT_DIR$/.test">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
+        <state relative-caret-position="20">
           <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
         </state>
       </provider>
