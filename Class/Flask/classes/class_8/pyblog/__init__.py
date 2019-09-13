@@ -22,4 +22,4 @@ db  = flask_sqlalchemy.SQLAlchemy(app)
 migrate = flask_migrate.Migrate(app, db)
 
 
-from pyblog import routes
+from pyblog import routes, models
