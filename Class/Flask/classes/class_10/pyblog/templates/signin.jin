@@ -1,0 +1,26 @@
+{% extends "base.jin" %}
+
+{% block main %}
+
+    <form method="POST" action="" novalidate>
+        {{  signinform.hidden_tag() }}
+
+        <p>
+            {{ signinform.username.label }}
+            {{ signinform.username() }}
+            <span style="color:red">{{ signinform.username.errors[0] }}</span>
+        </p>
+
+        <p>
+            {{ signinform.password.label }}
+            {{ signinform.password() }}
+            <span style="color:red">{{ signinform.password.errors[0] }}</span>
+        </p>
+
+        <p>
+            {{ signinform.submit() }}
+        </p>
+
+    </form>
+
+{% endblock %}
