@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pyblog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/master.css') }}">
+</head>
+<body>
+    <div class="horizontal-navbar">
+        <a href="{{ url_for('homepage') }}">Homepage</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('users_list') }}">Users</a>
+        {%  if current_user.is_authenticated %}
+            <p class="ignored"><a class="ignored" href="{{  url_for('user_profile', user_id=current_user.id) }}">{{ current_user.name }}</a> (<a class="ignored" href="{{ url_for('signout') }}">Sign out</a>)</p>
+        {%  else %}
+            <a href="{{ url_for('signup') }}">Sign Up</a>
+            <a href="{{ url_for('signin') }}">Sign In</a>
+        {%  endif %}
+    </div>
+
+    <div class="main-container">
+
+        <div class="flashed_msg">
+            {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+
+        {% block main %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

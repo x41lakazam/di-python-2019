@@ -5,19 +5,23 @@
 ###################################################
 
 from pyblog import fake_data
-from pyblog import app, db
+from pyblog import app, db, login_mngr
 from pyblog import forms, models
 import flask
 import datetime
+import flask_login
 from werkzeug import security
 
 @app.route('/')
 @app.route('/home')
 def homepage():
-    d = datetime.datetime.now()
-    current_date = "{}/{}/{}".format(d.day, d.month, d.year)
+    if flask_login.current_user.is_anonymous:
+        d = datetime.datetime.now()
+        current_date = "{}/{}/{}".format(d.day, d.month, d.year)
 
-    return flask.render_template("home.jin", today_date=current_date)
+        return flask.render_template("home.jin", today_date=current_date)
+    else:
+        return flask.redirect(flask.url_for('user_profile', user_id=flask_login.current_user.id ))
 
 
 @app.route('/contact')
@@ -28,6 +32,10 @@ def contact():
 @app.route('/users')
 def users_list():
     all_users = models.User.query.all()
+    for user in all_users:
+        if user.id == flask_login.current_user.id:
+            all_users.remove(user)
+
     return flask.render_template('users_list.jin',
                                  users=all_users)
 
@@ -51,11 +59,13 @@ def signin():
         username = form.username.data
         password = form.password.data
 
-        if models.User.check_signin(username, password):
+        user = models.User.check_signin(username, password)
+        if user:
             flask.flash("{} logged in !".format(username))
+            flask_login.login_user(user)
         else:
             flask.flash("Invalid username/password combination")
-            flask.render_template("signin.jin", signinform=form)
+            return flask.redirect(flask.url_for('signin'))
 
     else:
         flask.flash("Invalid form!")
@@ -90,3 +100,14 @@ def signup():
         else:  # STATE 2b: The form is invalid
             flask.flash("Invalid form")
             return flask.render_template("signup.jin", signupform=form)
+
+@app.route("/sign-out")
+def signout():
+    # log the user out
+    flask_login.logout_user()
+
+    # Redirect somewhere
+    return flask.redirect(flask.url_for('homepage'))
+
+
+

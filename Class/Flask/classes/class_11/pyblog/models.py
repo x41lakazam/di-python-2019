@@ -1,7 +1,13 @@
-from pyblog import db
+from pyblog import db, login_mngr
 from werkzeug import security
+import flask_login
 
-class User(db.Model):
+@login_mngr.user_loader
+def load_user(user_id):
+    user_id = int(user_id)
+    return User.query.get(user_id)
+
+class User(flask_login.UserMixin, db.Model):
 
     id                  = db.Column(db.Integer(), primary_key=True)
     name            = db.Column(db.String(64))
@@ -30,7 +36,9 @@ class User(db.Model):
             return False
 
         # Checking his password
-        return user.check_password
+        if user.check_password(password):
+            return user
+        return False
 
     def __repr__(self):
         return "<User {}>".format(self.name)
