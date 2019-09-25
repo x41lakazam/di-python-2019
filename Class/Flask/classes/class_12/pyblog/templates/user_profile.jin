@@ -1,0 +1,28 @@
+{###################################################}
+{######                                       ######}
+{######   pyblog/templates/user_profile.jin   ###### }
+{######                                       ######}
+{###################################################}
+
+{% extends "base.jin" %}
+
+{% block main %}
+    <h1 class="username">{{ user.name }}</h1>
+    <hr>
+    <div class="posts_container">
+        <ol>
+            {% for post in posts %}
+
+                <li class="post">
+                    <p class="post_title">{{ post.title }}</p>
+                    <p class="post_content">{{ post.content }}</p>
+                    <p class="post_pubdate">{{ post.pub_date_as_str() }}</p>
+                </li>
+
+            {%  endfor %}
+        </ol>
+    </div>
+
+
+{% endblock %}
+
