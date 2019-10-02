@@ -92,3 +92,9 @@ p, h1{
 .post-tag{
   font-weight: bold;
 }
+
+.top-right{
+  position: relative;
+  float: right;
+    top: -50px;
+}

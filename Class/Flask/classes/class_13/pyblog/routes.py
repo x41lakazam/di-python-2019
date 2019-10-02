@@ -138,3 +138,14 @@ def newpost():
         return flask.redirect(flask.url_for("homepage"))
     return flask.render_template("new_post.jin", form=form)
 
+@app.route('/search/by-tag/<tag>')
+def tag_search(tag):
+    # Retrieve tag object
+    tag_obj = models.Tag.query.filter_by(name=tag)[0]
+    if not tag_obj:
+        return flask. redirect(flask.url_for('homepage'))
+
+    associated_posts = tag_obj.posts
+    associated_posts.sort(key=lambda p: p.pub_date, reverse=True)
+
+    return flask.render_template('search_result.jin', posts=associated_posts)

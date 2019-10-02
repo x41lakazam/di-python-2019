@@ -90,6 +90,9 @@ class Post(db.Model):
             self.tags.append(tag_obj)
 
     def get_formatted_content(self):
+        if not self.content:
+            return self.content
+
         repl = lambda matchobj: '<span class="post-tag">{}</span>' .format(matchobj.group(0))
         regex = r'#\w+'
         return re.sub(regex, repl, self.content)
