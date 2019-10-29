@@ -11,6 +11,7 @@ import flask
 import datetime
 import flask_login
 from werkzeug import security
+import re
 
 @app.route('/')
 @app.route('/home')
@@ -141,11 +142,48 @@ def newpost():
 @app.route('/search/by-tag/<tag>')
 def tag_search(tag):
     # Retrieve tag object
-    tag_obj = models.Tag.query.filter_by(name=tag).first()
-    if not tag_obj:
-        return flask. redirect(flask.url_for('homepage'))
+    tag_list = models.Tag.query.filter_by(name=tag)
+    if not tag_list:
+        return flask.render_template('search_result.jin', posts=[])
 
+    tag_obj = tag_list[0]
     associated_posts = tag_obj.posts
     associated_posts.sort(key=lambda p: p.pub_date, reverse=True)
 
     return flask.render_template('search_result.jin', posts=associated_posts)
+
+@app.route('/search/by-content/<searched_txt>')
+def content_search(searched_txt):
+    searched_txt = searched_txt.lower()
+    all_posts = models.Post.query.all()
+    matched_posts = []
+    for post in all_posts:
+        match = re.search(searched_txt, post.content.lower())
+        if match:
+            matched_posts.append(post)
+
+    return flask.render_template('search_result.jin', posts=matched_posts)
+
+@app.route('/bridges/content-search', methods=('POST',))
+def bridge_content_search():
+    searched_txt = flask.request.form['searched_txt']
+    return flask.redirect(flask.url_for('content_search', searched_txt=searched_txt))
+
+#  ______________________________ 
+# < This function is really easy >
+#  ------------------------------ 
+#         \   ^__^
+#          \  (oo)\_______
+#             (__)\       )\/\
+#                 ||----w |
+#                 ||     ||
+
+
+
+
+
+
+
+
+
+
