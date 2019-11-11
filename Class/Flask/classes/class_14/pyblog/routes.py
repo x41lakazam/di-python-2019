@@ -5,13 +5,14 @@
 ###################################################
 
 from pyblog import fake_data
-from pyblog import app, db, login_mngr
+from pyblog import app, db, login_mngr, mail
 from pyblog import forms, models
 import flask
 import datetime
 import flask_login
 from werkzeug import security
 import re
+import flask_mail
 
 @app.route('/')
 @app.route('/home')
@@ -178,10 +179,21 @@ def bridge_content_search():
 #                 ||----w |
 #                 ||     ||
 
+@app.route('/send-mail-to-everyone')
+def send_mail_to_everyone():
+    msg = flask_mail.Message('Your first mail from pyblog',
+                            sender='awetandtesfit@gmail.com',
+                            recipients=['awetkebedom@gmail.com',
+                                        'menkregrma12@gmail.com',
+                                        'michealkatina@yahoo.se']
+                            )
 
+    msg.body = "Hello guys :)"
 
-
-
+    # Send the message
+    mail.send(msg)
+    print("I sent a message!")
+    return flask.redirect(flask.url_for('homepage'))
 
 
 

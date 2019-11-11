@@ -18,7 +18,7 @@
             <a href="{{ url_for('signup') }}">Sign Up</a>
             <a href="{{ url_for('signin') }}">Sign In</a>
         {%  endif %}
-        <form action="{{ url_for('bridge_search_content') }}">
+        <form action="{{ url_for('bridge_content_search') }}">
             <input type="text" placeholder="Search.." size=32 name="searched_txt">
             <input type="submit" value="🔎">
         </form>
