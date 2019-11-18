@@ -1,0 +1,60 @@
+{% extends "base.jin" %}
+
+{% block main %}
+        <script>
+            function addCityField(){
+                var button = document.getElementById("add-city");
+                var fieldToAdd = '<p>{{ signupform.city.label}} {{ signupform.city() }} <br> </p>';
+                button.insertAdjacentHTML('beforebegin', fieldToAdd);
+            }
+        </script>
+
+    <form method="POST" action="" novalidate>
+        {{  signupform.hidden_tag() }}
+
+        <p>
+            {{ signupform.username.label }}
+            {{ signupform.username() }}
+            <span style="color:red">{{ signupform.username.errors[0] }}</span>
+        </p>
+
+        <p>
+            {{ signupform.email.label }}
+            {{ signupform.email() }}
+            <span style="color:red">{{ signupform.email.errors[0] }}</span>
+        </p>
+
+        <p>
+            {{ signupform.password.label }}
+            {{ signupform.password() }}
+            <span style="color:red">{{ signupform.password.errors[0] }}</span>
+        </p>
+
+        <p>
+            {{ signupform.password_confirm.label }}
+            {{ signupform.password_confirm() }}
+            <span style="color:red">{{ signupform.password_confirm.errors[0] }}</span>
+        </p>
+
+        <p>
+           {{ signupform.age.label  }}
+            {{ signupform.age() }}
+            <span style="color:red">{{ signupform.age.errors[0] }}</span>
+        </p>
+
+        <p>
+           {{ signupform.city.label }}
+           {{ signupform.city() }}
+            <span style="color:red">{{ signupform.city.errors[0] }}</span>
+        </p>
+                
+        <img class="col-md-3" src="{{ url_for('static', filename='img/plus_sign.png') }}" style="height:20px; width:20px" id="add-city" type="button" onclick="addCityField()"/>
+
+
+        <p>
+            {{ signupform.submit() }}
+        </p>
+
+    </form>
+
+{% endblock %}
