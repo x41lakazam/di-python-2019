@@ -1,0 +1,140 @@
+body{
+  background-color: #ebdcb2;
+  margin: 0;
+}
+
+p, h1{
+  font-family: "Times New Roman";
+}
+.main-container{
+  margin: 50px 200px;
+  color: #000;
+}
+
+.horizontal-navbar{
+  background-color: #AF4425;
+  margin:0;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.horizontal-navbar a:not(.ignored){
+  text-decoration:none;
+  color: #ebdcb2;
+  height: 100%;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 15px;
+}
+
+.horizontal-navbar p{
+  text-decoration:none;
+  color: #ebdcb2;
+}
+
+.horizontal-navbar p a{
+  text-decoration:none;
+  color: #ebdcb2;
+}
+
+.horizontal-navbar p a:hover{
+  text-decoration:underline;
+}
+
+.horizontal-navbar a:not(.ignored):hover{
+  background-color: #d45733;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.txt-input{
+    height: 20px;
+    border-radius:3px;
+    padding:5px;
+    width:250px;
+}
+
+.search-div{
+    display: inline-block;
+}
+
+.search-bar input[type='submit']{
+    height:30px;
+
+}
+
+.search-dropdown{
+    display: none;
+    position: absolute;
+    background-color: cyan;
+    width: 265px; 
+}
+
+.search-dropdown a{
+    text-decoration: none;
+    min-height: 15px;
+    padding: 15px 10px;
+    display: block;
+    color: black;
+}
+
+.search-dropdown a:hover{
+    background-color: #00eeee;
+}
+
+.posts_container{
+  width: 80%;
+  margin: auto;
+}
+
+.username{
+  margin-bottom: 2px;
+  padding-bottom: 0;
+}
+
+.posts_container ol{
+  list-style-type: none;
+}
+
+.post{
+  width: 80%;
+  background-color: antiquewhite;
+  padding: 1px 20px;
+  margin: 10px 0;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px;
+}
+
+.post p{
+  font-family: Serif;
+}
+
+.post_title{
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 8px;
+}
+
+.post_pubdate{
+  position:relative;
+  left: 85%;
+  font-size: 13px;
+}
+
+.post-tag{
+  font-weight: bold;
+}
+
+.top-right{
+  position: relative;
+  float: right;
+    top: -50px;
+}
+
+
+#add-city:hover{
+    cursor: pointer;
+}
